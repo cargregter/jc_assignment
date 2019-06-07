@@ -1,2 +1,2 @@
-# jc_assignment
-A library to assist in keeping and reporting statistics for for some set of timed actions.
+# Action Statistics (from a JumpCloud "Assignment")
+A library to assist in keeping and reporting statistics for some set of timed actions.
