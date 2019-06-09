@@ -15,6 +15,12 @@ func Add(actionJSON string) (err error) {
 		return
 	}
 
+	// Note: We could have made `actions` a map instead
+	// and just added times as entered to a single entry
+	// per distinct action. However, by keeping the actions
+	// individually, we leave open (and perhaps point towards)
+	// support for more functionality. This at the expense of
+	// memory.
 	actionsSyncEle.Lock()
 	actions = append(actions, act)
 	actionsSyncEle.Unlock()

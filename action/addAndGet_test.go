@@ -93,8 +93,7 @@ func TestAddAndGet(t *testing.T) {
         "avg": 200
     }
 ]`) != "" {
-			}
-			So(report, ShouldEqual, `[
+				So(report, ShouldEqual, `[
     {
         "action": "jump",
         "avg": 200
@@ -104,6 +103,7 @@ func TestAddAndGet(t *testing.T) {
         "avg": 75
     }
 ]`)
+			}
 		}
 })
 

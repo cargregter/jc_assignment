@@ -82,8 +82,7 @@ func TestGetStatistics(t *testing.T) {
         "avg": 150
     }
 ]`) != "" {
-			}
-			So(report, ShouldEqual, `[
+				So(report, ShouldEqual, `[
     {
         "action": "jump",
         "avg": 150
@@ -93,6 +92,7 @@ func TestGetStatistics(t *testing.T) {
         "avg": 75
     }
 ]`)
+			}
 		}
 	})
 

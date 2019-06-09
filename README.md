@@ -17,7 +17,7 @@ Unit and integration tests are provided. A couple of mechanisms
 for running the tests are suggested.
 
 ## `go test`
-From directory ../jc_assignment/action, use
+From directory `.../jc_assignment/action`, use
 ```bash
 $ go test --test.v
 ```
@@ -28,6 +28,32 @@ which to define test cases along with lots of matchers and
 a convenient web interface.
 
 # Usage
+## API
+This library exposes two functions.
+
+- `Add(action string) error`: Used to add the details of an action,
+the `action` parameter is a JSON string like
+```bash
+`{"action":"run", "time":75}`
+```
+Units of the `time` value are your choice. An error is returned
+if there is difficulty interpreting the input.
+- `GetStats() string`: Used to obtain a report of the statistics
+having been added. The report is in formatted JSON form like
+```bash
+[
+    {
+        "action": "jump",
+        "avg": 200
+    },
+    {
+        "action": "run",
+        "avg": 75
+    }
+]
+```
+
+## Example Code
 In your code, add lines like the following as appropriate:
 ```go
 ...
@@ -73,3 +99,12 @@ It would likely mean capturing more raw data. But even with
 what we currently capture, one could see the usefulness of
 including the total number of observations for an action, and
 perhaps the mode and median of the provided times.
+
+## Editing Actions
+Currently actions can only be added. There is no contemplation
+of modifying or removing them, except that each added action
+is kept separately.
+
+## Dumping Action Detail
+While all action detail is kept, there is currently no
+mechanism for dumping them for inspection.
